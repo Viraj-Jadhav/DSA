@@ -1,0 +1,947 @@
+/*  loader page */
+#preloader {
+    position: absolute;
+    z-index: 999;
+    height: 100%;
+    width: 100%;
+    background: #ffffff;
+    top: 0;
+    left: 0;
+}
+
+#preloader div {
+    position: absolute;
+    width: 450px;
+    height: 300px;
+    left: 450px;
+    top: 150px;
+}
+
+#animation_logo {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+#ball_logo {
+    position: absolute;
+    left: 178px;
+    top: 100px;
+    animation: logo_animation 4s linear 1;
+    animation-delay: 1s;
+}
+
+@keyframes logo_animation {
+    0% {
+        left: 178px;
+        top: 100px;
+    }
+
+    1% {
+        top: 91px;
+    }
+
+    2% {
+        top: 84px;
+    }
+
+    3% {
+        top: 79px;
+    }
+
+    4% {
+        top: 76px;
+    }
+
+    5% {
+        top: 75px;
+    }
+
+    6% {
+        top: 76px;
+    }
+
+    7% {
+        top: 79px;
+    }
+
+    8% {
+        top: 84px;
+    }
+
+    9% {
+        top: 91px;
+    }
+
+    10% {
+        left: 275px;
+        top: 100px;
+    }
+
+    100% {
+        left: 275px;
+    }
+}
+
+
+
+/*  body    */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+
+
+/*  Icons   */
+
+.material-icons {
+    cursor: pointer;
+}
+
+
+
+/*  Input   */
+
+input:focus {
+    outline: none;
+}
+
+
+
+/*  Textboxes   */
+
+input[type=text] {
+    padding-left: 5px;
+    border-radius: 20px;
+    transition: all 0.4s;
+    margin-left: 10px;
+    width: 100px;
+    border: none;
+    background: rgb(202, 238, 255);
+    box-shadow: inset 2px 2px 4px #a9a9a9,
+        inset -2px -2px 4px #ffffff;
+}
+
+input[type=text]:hover {
+    background-color: #65ffde;
+}
+
+input[type=text]:focus {
+    background-color: rgb(162, 249, 255);
+}
+
+
+
+/*  Control panal   */
+
+#controls {
+    height: 100%;
+    width: 250px;
+    color: rgb(0, 0, 0);
+    margin: 0px;
+    position: absolute;
+    top: 0;
+    left: 0em;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: #d4d4d4;
+    box-shadow: 5px 5px 10px #b6b6b6,
+        -5px -5px 10px #ffffff;
+}
+
+#controls::-webkit-scrollbar {
+    width: 10px;
+}
+
+#controls::-webkit-scrollbar-track {
+    background: linear-gradient(90deg, #e6bf7c, #ffe394);
+    box-shadow: 2px 2px 3px #d9b475,
+        -2px -2px 3px #fff49f;
+}
+
+#controls::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, #aeff94, #93e67c);
+    box-shadow: 2px 2px 4px #6ca85b,
+        -2px -2px 4px #daffb9;
+    border-radius: 5px;
+}
+
+#controls::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(145deg, #90ff6d, #7ae65c);
+    box-shadow: 2px 2px 4px #59a843,
+        -2px -2px 4px #b5ff89;
+}
+
+
+
+/*  Collapse botton  */
+
+#collapse {
+    background: #ffa970;
+    box-shadow: 4px 4px 8px #c78457,
+        -4px -4px 8px #ffce89;
+    border-radius: 0 4px 4px 0;
+    font-size: 20px;
+    float: left;
+    margin-left: 242px;
+    top: 235px;
+    position: absolute;
+
+}
+
+#collapse:hover {
+    transform-style: preserve-3d;
+    transform: rotateY(-30deg);
+    perspective: 100px;
+}
+
+
+
+/*  Tooltips    */
+
+.tooltip {
+    position: absolute;
+    color: white;
+    background: #696969;
+    box-shadow: 2px 2px 10px #a7a7a7,
+        -2px -2px 10px #dddddd;
+    border-radius: 10px;
+    z-index: -1;
+    padding: 10px;
+    padding-right: 0px;
+    display: inline-block;
+    width: 200px;
+    left: -250px;
+}
+
+#VelMagTip {
+    top: 125px;
+}
+
+#VelAngTip {
+    top: 145px;
+}
+
+#VelXTip {
+    top: 120px
+}
+
+#VelYTip {
+    top: 140px;
+}
+
+#GraTip {
+    top: 200px;
+}
+
+#ForMagTip {
+    top: 305px;
+}
+
+#ForAngTip {
+    top: 315px;
+}
+
+#ForXTip {
+    top: 295px;
+}
+
+#ForYTip {
+    top: 315px;
+}
+
+#HeiHeiTip {
+    top: 375px;
+}
+
+#HeiBloTip {
+    top: 420px;
+}
+
+#HeiWidTip {
+    top: 445px;
+}
+
+#HeiCoeTip {
+    top: 465px;
+}
+
+#ObsHeiTip {
+    top: 475px;
+}
+
+#ObsWidTip {
+    top: 500px;
+}
+
+#ObsDisTip {
+    top: 505px;
+}
+
+#ObsCoeTip {
+    top: 535px;
+}
+
+#ObsGroTip {
+    top: 570px;
+}
+
+
+
+/*  Control Panel Elements  */
+
+#controls h4 {
+    background: linear-gradient(180deg, #ff7878, #e66565);
+    box-shadow: 4px 4px 8px #c75757,
+        -4px -4px 8px #ff8989;
+    font-size: 16px;
+    height: 15px;
+    width: 150px;
+    border-radius: 0 20px 20px 0;
+    padding-bottom: 10px;
+    padding-top: 7px;
+    text-align: center;
+    position: relative;
+    top: 5px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+#controls h5 {
+    background: #ff9e9e;
+    box-shadow: 4px 4px 8px #c77b7b,
+        -4px -4px 8px #ffc1c1;
+    font-size: 14px;
+    font-weight: bold;
+    color: #535353;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+}
+
+#controls h5 span {
+    position: relative;
+    float: right;
+    bottom: 5px;
+}
+
+#controls h5 span:hover {
+    background: linear-gradient(145deg, #ffa9a9, #e68e8e);
+    box-shadow: 4px 4px 8px #c77b7b,
+        -4px -4px 8px #ffc1c1;
+}
+
+
+
+/*  Initial Velocity Toggle */
+
+#VelInpTyp input {
+    display: none;
+}
+
+#VelInpTyp {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 36px;
+    top: 10px;
+    left: 10px;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #ffd48a;
+    box-shadow: inset 2px 2px 3px #bd9d66,
+        inset -2px -2px 3px #ffffae;
+    border-radius: 12px;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+.slider:hover {
+    background-color: rgb(255, 166, 133);
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 20px;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(145deg, #aeff94, #93e67c);
+    box-shadow: 2px 2px 4px #6ca85b,
+        -2px -2px 4px #daffb9;
+    border-radius: 50%;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+
+input:checked+.slider:before {
+    transform: translateY(20px);
+}
+
+#XYComp {
+    float: right;
+    width: 200px;
+    position: absolute;
+    top: 23px;
+    left: 30px;
+    transition: all 0.4s;
+}
+
+input:checked~#XYComp {
+    color: rgb(190, 0, 0);
+}
+
+#MagAng {
+    float: right;
+    width: 200px;
+    position: absolute;
+    top: 2px;
+    left: 30px;
+    color: rgb(190, 0, 0);
+    ;
+    transition: all 0.4s;
+}
+
+input:checked~#MagAng {
+    color: #000000;
+}
+
+
+
+/*  Velocity magnitude and angle control    */
+
+#VelMagCon {
+    position: relative;
+    margin-top: 25px;
+    margin: 10px;
+    padding-top: 10px;
+}
+
+
+
+/*  Velocity components control */
+
+#VelComCon {
+    position: relative;
+    margin-top: 25px;
+    margin: 10px;
+    padding-top: 10px;
+}
+
+
+
+/*  Gravitational acceleration control  */
+
+#Gra label {
+    position: relative;
+    margin-top: 25px;
+    margin: 10px;
+}
+
+#GraInp {
+    position: relative;
+    margin-top: 5px;
+}
+
+
+
+/*  Force toggle    */
+
+#ForInpTyp input {
+    display: none;
+}
+
+#ForInpTyp {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 36px;
+    top: 10px;
+    left: 10px;
+}
+
+#ForXYComp {
+    float: right;
+    width: 200px;
+    position: absolute;
+    top: 23px;
+    left: 30px;
+    transition: all 0.4s;
+}
+
+input:checked~#ForXYComp {
+    color: rgb(190, 0, 0);
+    ;
+}
+
+#ForMagAng {
+    float: right;
+    width: 200px;
+    position: absolute;
+    top: 2px;
+    left: 30px;
+    color: rgb(190, 0, 0);
+    ;
+    transition: all 0.4s;
+}
+
+input:checked~#ForMagAng {
+    color: #000000;
+}
+
+
+
+/*  Force magnitude and angle control   */
+
+#ForMagCon {
+    position: relative;
+    margin-top: 25px;
+    margin: 10px;
+    padding-top: 10px;
+}
+
+
+
+/*  Force components control    */
+
+#ForComCon {
+    position: relative;
+    margin-top: 25px;
+    margin: 10px;
+    padding-top: 10px;
+}
+
+
+
+/*  Initial Height  */
+
+#Hei label {
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+#HeiCoeInpVal {
+    position: absolute;
+    width: 50px;
+    left: 130px;
+}
+
+
+
+/*  Initial Height Block Checkbox   */
+
+#HeiBlo input {
+    display: none;
+}
+
+#HeiBlo {
+    position: relative;
+    display: block;
+    width: 40px;
+    height: 14px;
+    top: 10px;
+    left: 10px;
+    text-align: center;
+}
+
+.checkbox {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(145deg, #c98eff, #a978e6);
+    box-shadow: 3px 3px 5px #855eb5,
+        -3px -3px 5px #f3acff;
+    border-radius: 5px;
+    transition: all 0.4s;
+    padding-top: 2px;
+}
+
+.checkbox:hover {
+    background: linear-gradient(145deg, #c98eff, #a978e6);
+    box-shadow: 8px 8px 16px #855eb5,
+        -8px -8px 16px #f3acff;
+}
+
+input:checked~.checkbox {
+    background: linear-gradient(145deg, #a978e6, #c98eff);
+    box-shadow: 3px 3px 5px #855eb5,
+        -3px -3px 5px #f3acff;
+}
+
+input:checked~.checkbox:hover {
+    background: linear-gradient(145deg, #a978e6, #c98eff);
+    box-shadow: 8px 8px 16px #855eb5,
+        -8px -8px 16px #f3acff;
+}
+
+
+
+/*  Initial Height Block Coefficient of Restitution */
+
+#Hei div {
+    display: block;
+    position: relative;
+    top: 10px;
+}
+
+
+
+/*  Range Sliders   */
+
+.range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 120px;
+    height: 10px;
+    background: #ffce7a;
+    box-shadow: inset 1px 1px 2px #bd9d66,
+        inset -1px -1px 2px #ffffae;
+    border-radius: 10px;
+    transition: all 0.4s;
+    margin-left: 10px;
+
+}
+
+.range:hover {
+    background-color: rgb(255, 166, 133);
+}
+
+.range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 14px;
+    width: 14px;
+    background: linear-gradient(145deg, #aeff94, #93e67c);
+    box-shadow: 2px 2px 4px #6ca85b,
+        -2px -2px 4px #daffb9;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.range::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    width: 10px;
+    background: linear-gradient(145deg, #aeff94, #93e67c);
+    box-shadow: 2px 2px 4px #6ca85b,
+        -2px -2px 4px #daffb9;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+
+
+/*  Obstacle    */
+
+#Obs h5 {
+    margin-bottom: 10px;
+}
+
+#Obs label {
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+#ObsCoeInpVal {
+    position: relative;
+    top: 0px;
+    width: 50px;
+    left: 0px;
+    margin-left: 5px;
+}
+
+#ObsGroInpVal {
+    position: relative;
+    top: 0px;
+    width: 50px;
+    left: 0px;
+    margin-left: 5px;
+}
+
+
+
+/*  Main Container*/
+
+#MainCont {
+    position: absolute;
+    left: 250px;
+    height: 100%;
+    width: 1112px;
+    z-index: -2;
+}
+
+
+
+/*  Simulate Button */
+
+#simulate {
+    position: relative;
+    top: 530px;
+    left: 20px;
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    border: #88ff78 2px solid;
+    background: linear-gradient(180deg, #b9ffb0, #88ff78, #5cec38);
+    box-shadow: 2px 2px 4px #919191,
+        -2px -2px 4px #ffffff;
+    font-size: 15px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px #919191,
+        -1px -1px 4px #ffffff;
+    z-index: -2;
+    cursor: pointer;
+}
+
+#simulate:hover {
+    box-shadow: 4px 4px 4px #919191,
+        -4px -4px 4px #ffffff;
+}
+
+#simulate:hover~#space_bar {
+    left: -5px;
+}
+
+
+
+/*  Stop Button    */
+
+#stop {
+    position: relative;
+    top: 580px;
+    left: -130px;
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    border: #ffc578 2px solid;
+    background: linear-gradient(180deg, #ffdab0, #ffc578, #ec9838);
+    box-shadow: 2px 2px 4px #919191,
+        -2px -2px 4px #ffffff;
+    font-size: 15px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px #919191,
+        -1px -1px 4px #ffffff;
+    z-index: -2;
+    cursor: pointer;
+}
+
+#stop:hover {
+    box-shadow: 4px 4px 4px #919191,
+        -4px -4px 4px #ffffff;
+}
+
+#stop:hover~#space_bar {
+    left: -5px;
+}
+
+
+
+/*  Reset button    */
+
+#reset {
+    position: absolute;
+    top: 580px;
+    left: 200px;
+    height: 40px;
+    width: 150px;
+    border-radius: 20px;
+    border: #ff7878 2px solid;
+    background: linear-gradient(180deg, #ffb0b0, #ff7878, #ec3838);
+    box-shadow: 2px 2px 4px #919191,
+        -2px -2px 4px #ffffff;
+    font-size: 15px;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px #919191,
+        -1px -1px 4px #ffffff;
+    z-index: -2;
+    cursor: pointer;
+}
+
+#reset:hover {
+    box-shadow: 4px 4px 4px #919191,
+        -4px -4px 4px #ffffff;
+}
+
+#reset:hover~#R_key {
+    left: -5px;
+}
+
+
+
+/*  trajectory display  */
+#trajectory_display {
+    position: absolute;
+    top: 530px;
+    left: 200px;
+    height: 40px;
+    width: 150px;
+    font-size: 15px;
+    border-radius: 20px;
+    border: #fff678 2px solid;
+    background: linear-gradient(180deg, #fffab0, #fff278, #ece922, #bbb800);
+    box-shadow: 2px 2px 4px #919191,
+        -2px -2px 4px #ffffff;
+    font-weight: bolder;
+    text-shadow: 2px 2px 4px #919191,
+        -1px -1px 4px #ffffff;
+    cursor: pointer;
+}
+
+#trajectory_display:hover {
+    box-shadow: 4px 4px 4px #919191,
+        -4px -4px 4px #ffffff;
+}
+
+#trajectory_display:hover~#T_key {
+    left: -5px;
+}
+
+
+
+/*  shortcut display    */
+#ButCon div {
+    position: absolute;
+    top: 500px;
+    left: -500px;
+    width: 100px;
+    height: 20px;
+    font-size: 10px;
+    background: black;
+    opacity: 70%;
+    color: lightblue;
+    border-radius: 5px;
+    padding-top: 8px;
+    padding-left: 10px;
+    text-align: center;
+    transition: all 1s;
+}
+
+
+
+/*  Output panal    */
+
+#outputs {
+    font-size: 11px;
+    z-index: -2;
+    padding-left: 10px;
+    width: 210px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    border-radius: 15px;
+    background: rgba(247, 247, 247, 50%);
+    box-shadow: 2px 2px 5px #b3b3b3,
+        -2px -2px 5px #ffffff;
+}
+
+
+
+#mode {
+    font-size: 75px;
+    position: absolute;
+    left: 75%;
+    transform: rotate(0deg);
+    top: 10%;
+    height: 75px;
+    width: 75px;
+    z-index: -2;
+    color: rgb(255, 255, 255);
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 0px 0px 25px rgb(255, 255, 0),
+        0px 0px 50px rgb(255, 255, 0),
+        0px 0px 75px rgb(255, 255, 0),
+        0px 0px 100px rgb(255, 255, 0);
+
+}
+
+
+
+/*  logo    */
+
+#logo_container {
+    position: absolute;
+    height: 120px;
+    width: 180px;
+    right: 0px;
+    top: 550px;
+}
+
+#logo_container img {
+    transition: all 1s;
+}
+
+#logo_container div {
+    background-color: rgb(46, 46, 46);
+    text-align: center;
+    padding-top: 20px;
+    color: rgb(163, 163, 163);
+    opacity: 0%;
+    width: 180px;
+    height: 50px;
+    z-index: -1;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-radius: 20px;
+    border: orange solid 1px;
+    transition: all 1s;
+}
+
+#logo_container div::before {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 90px;
+    margin-left: -5px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: orange transparent transparent transparent;
+}
+
+#logo_container div::after {
+    content: " ";
+    position: absolute;
+    top: 100%;
+    left: 91px;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(46, 46, 46) transparent transparent transparent;
+}
+
+#logo_container img:hover+div {
+    opacity: 100%;
+    top: -55px;
+}
+
+
+
+/*  Svg container */
+
+svg {
+    overflow: scroll;
+    border: #696969 solid 2px;
+    position: absolute;
+    left: 0px;
+    top: -8px;
+    z-index: -3;
+    cursor: crosshair;
+}

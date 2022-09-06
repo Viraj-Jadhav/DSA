@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='projectile.js'></script>
+    <link rel="stylesheet" href="projectile.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div id='preloader'>
+        <div>
+            <img src="Projectile animation logo.png" alt="Projectile logo" width="450px" height="300px"
+                id='animation_logo'></img>
+            <img src="Projectile ball logo.png" alt="" width='39px' height="26px" id='ball_logo'></img>
+        </div>
+    </div>
+    <div id='tooltip-container'>
+        <div class='tooltip' id='VelMagTip'>
+            Magnitude of the initial velocity (m/s)
+        </div>
+        <div class="tooltip" id='VelAngTip'>
+            Angle of the initial velocity with positive X-axis (degrees)
+        </div>
+        <div class='tooltip' id='VelXTip'>
+            Component of the initial velocity in positive X-direction (m/s)
+        </div>
+        <div class="tooltip" id='VelYTip'>
+            Component of the initial velocity in positive Y-direction (m/s)
+        </div>
+        <div class="tooltip" id="GraTip">
+            Acceleration due to gravity (m/s<sup>2</sup>)
+        </div>
+        <div class="tooltip" id='ForMagTip'>
+            Magnitude of the acceleration (m/s<sup>2</sup>)
+        </div>
+        <div class='tooltip' id="ForAngTip">
+            Angle of the acceleration with positive X-axis (degrees)
+        </div>
+        <div class="tooltip" id="ForXTip">
+            Component of acceleration in positive X-direction (m/s<sup>2</sup>)
+        </div>
+        <div class="tooltip" id="ForYTip">
+            Component of acceleration in positive Y-direction (m/s<sup>2</sup>)
+        </div>
+        <div class="tooltip" id="HeiHeiTip">
+            Initial Height of the ball from the ground (m)
+        </div>
+        <div class="tooltip" id="HeiBloTip">
+            Display/Hide the rigid block
+        </div>
+        <div class="tooltip" id="HeiWidTip">
+            Width of the block (m)
+        </div>
+        <div class="tooltip" id="HeiCoeTip">
+            Coefficient of restitution of the block (0 to 1)
+        </div>
+        <div class="tooltip" id="ObsHeiTip">
+            Height of the obstacle block from the ground (m)
+        </div>
+        <div class="tooltip" id="ObsWidTip">
+            Width of the obstacle block (m)
+        </div>
+        <div class="tooltip" id="ObsDisTip">
+            Distance of the obstacle block from the ball (m)
+        </div>
+        <div class="tooltip" id="ObsCoeTip">
+            Coefficient of restitution of the obstacle block (0 to 1)
+        </div>
+        <div class="tooltip" id="ObsGroTip">
+            Coefficient of restitution of the ground (0 to 1)
+        </div>
+    </div>
+    <div id='controls'>
+        <h4>Controls</h4>
+        <div id='Vel'>
+            <h5>Initial Velocity<span class='material-icons'>expand_less</span></h5>
+            <div id='VelCon'>
+                <label id='VelInpTyp'>
+                    <input type='checkbox'>
+                    <span class='slider'></span>
+                    <label id='MagAng'>Magnitude and Angle</label>
+                    <br>
+                    <label id='XYComp'>X-Y Componets</label>
+                </label>
+                <div id='VelMagCon'>
+                    <label for='VelMagInp'>Magnitude : </label>
+                    <input type='text' value='0' id='VelMagInp' form="form">
+                    <br>
+                    <label for="VelAngInp">Angle : </label>
+                    <input type='text' value='0' id='VelAngInp' form="form">
+                </div>
+                <div id='VelComCon'>
+                    <label for='VelXInp'>V<sub>x</sub> : </label>
+                    <input type='text' value='0' id='VelXInp' form="form">
+                    <br>
+                    <label for="VelYInp">V<sub>y</sub> : </label>
+                    <input type='text' value='0' id='VelYInp' form="form">
+                </div>
+            </div>
+        </div>
+        <div id='Gra'>
+            <h5>Gravitational Acceleration<span class='material-icons'>expand_less</span></h5>
+            <div id='GraCon'>
+                <label for='GraInp'>g : </label>
+                <input type="text" value='9.80665' id='GraInp' form="form">
+            </div>
+        </div>
+        <div id='For'>
+            <h5>Force Field<span class='material-icons'>expand_less</span></h5>
+            <div id='ForCon'>
+                <label id='ForInpTyp'>
+                    <input type='checkbox'>
+                    <span class='slider'></span>
+                    <label id='ForMagAng'>Magnitude and Angle</label>
+                    <br>
+                    <label id='ForXYComp'>X-Y Componets</label>
+                </label>
+                <div id='ForMagCon'>
+                    <label for='ForMagInp'>Magnitude : </label>
+                    <input type='text' value='0' id='ForMagInp' form="form">
+                    <br>
+                    <label for="ForAngInp">Angle : </label>
+                    <input type='text' value='0' id='ForAngInp' form="form">
+                </div>
+                <div id='ForComCon'>
+                    <label for='ForXInp'>a<sub>x</sub> : </label>
+                    <input type='text' value='0' id='ForXInp' form="form">
+                    <br>
+                    <label for="ForYInp">a<sub>y</sub> : </label>
+                    <input type='text' value='0' id='ForYInp' form="form">
+                </div>
+            </div>
+        </div>
+        <div id='Hei'>
+            <h5>Initial Height<span class='material-icons'>expand_less</span></h5>
+            <div id='HeiCon'>
+                <label for='HeiHeiInp'>Height : </label>
+                <input type="text" value='0' id='HeiHeiInp' form="form">
+                <br>
+                <label id="HeiBlo">
+                    <input type="checkbox" form="form">
+                    <span class='checkbox'>Block</span>
+                </label>
+                <div>
+                    <br>
+                    <label for="HeiWidInp">Width : </label>
+                    <input type="text" value='0' id='HeiWidInp' form="form">
+                    <br>
+                    <label for='HeiCoeInp'>Coefficient of Restitution : </label>
+                    <input type="range" min=0 max=1 step=0.001 value=0 id='HeiCoeInp' class='range' form="form">
+                    <input type="text" for='HeiCoeInp' id='HeiCoeInpVal' value="0" min="0" max="1" maxlength="5"
+                        form="form"></input>
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div id='Obs'>
+            <h5>Obstacle<span class='material-icons'>expand_less</span></h5>
+            <div id='ObsCon'>
+                <form id='form'>
+                    <label for='ObsHeiInp'>Height : </label>
+                    <input type="text" value='0' id='ObsHeiInp'>
+                    <br>
+                    <label for="ObsWidInp">Width : </label>
+                    <input type="text" value='0' id='ObsWidInp'>
+                    <br>
+                    <label for="ObsDisInp">Distance : </label>
+                    <input type="text" value='0' id='ObsDisInp'>
+                    <br>
+                    <label for='ObsCoeInp'>Coefficient of Restitution : </label>
+                    <br>
+                    <input type="range" min=0 max=1 step=0.001 value=0 id='ObsCoeInp' class='range'>
+                    <input type="text" for='ObsCoeInp' id='ObsCoeInpVal' value="0" min='0' max='1'
+                        maxlength="5"></input>
+                    <br>
+                    <label for='ObsGroInp'>Coefficient of Restitution of the Ground : </label>
+                    <br>
+                    <input type="range" min=0 max=1 step=0.001 value=0 id='ObsGroInp' class="range">
+                    <input type="text" for='ObsGroInp' id='ObsGroInpVal' value="0" min="0" max="1"
+                        maxlength="5"></input>
+                </form>
+            </div>
+        </div>
+    </div>
+    <span class='material-icons' id='collapse'>chevron_left</span>
+    <div id='MainCont'>
+        <div id='ButCon'>
+            <input type='submit' id='simulate' value="Simulate"></input>
+            <input type='button' id="stop" value="Pause" disabled></input>
+            <input type="reset" id='reset' value="Reset" form="form"></input>
+            <input type="button" id='trajectory_display' value="Show Trajectory"></input>
+            <div id='space_bar'>Press SPACE BAR</div>
+            <div id='T_key'>Press T key</div>
+            <div id='R_key'>Press R key</div>
+        </div>
+        <div id='outputs'>
+            <p><b>Maximum Height : </b><span id="height"></span></p>
+            <p><b>Range : </b><span id="range"></span></p>
+            <p><b>Final Velocity : </b><span id="finalV"></span></p>
+            <p><b>Total time required : </b><span id="time"></span></p>
+            <p><b>Time : </b><span id='global_time'>0 S</span></p>
+            <p><b>Velocity : </b><span id="velocity">(0, 0) m/s</span></p>
+            <p><b>Location of the ball : </b><span id="location">(0, 0) m</span></p>
+            <p><b>Location of the pointer : </b><span id="pointer"></span></p>
+        </div>
+        <div id="mode" class="material-icons">
+            brightness_3
+        </div>
+        <div id='logo_container'>
+            <img src="Projectile logo.png" alt="logo" height="120px" width="180px">
+            <div>
+                A simulator that imitates the
+                <br>
+                real-life projectile motion.
+            </div>
+        </div>
+        <svg height="99.5%" width="100%">
+            <radialGradient id="ball_color" cx="45%" cy="45%" r="60%" fx="70%" fy="30%">
+                <stop offset="0.1" stop-color="#ff9999" />
+                <stop offset="0.7" stop-color="red" />
+                <stop offset="0.9" stop-color="darkred" />
+            </radialGradient>
+            <linearGradient id="block_color" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color='#299900' />
+                <stop offset="60%" stop-color='#36cc00' />
+                <stop offset="80%" stop-color="#7cff4d" />
+                <stop offset="100%" stop-color='#36cc00' />
+            </linearGradient>
+            <linearGradient id="obstacle_color" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color='#cc9600' />
+                <stop offset="60%" stop-color='#ffbb00' />
+                <stop offset="80%" stop-color="#ffdd80" />
+                <stop offset="100%" stop-color='#ffbb00' />
+            </linearGradient>
+            <linearGradient id="day_color" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color='#4dd8ff' />
+                <stop offset="70%" stop-color='red' />
+            </linearGradient>
+            <linearGradient id="night_color" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color='#00068a' />
+                <stop offset="25%" stop-color='#000000' />
+            </linearGradient>
+            <linearGradient id="ground_color" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color='#8a4300' />
+                <stop offset="100%" stop-color='#331900' />
+            </linearGradient>
+            <rect height="2000px" width="2000px" fill="url(#day_color)" id="sky"></rect>
+            <rect height="150px" width="2000px" y="510px" fill="url(#ground_color)" id="ground"></rect>
+            <rect height="0px" width="0px" x="-1000px" y="510px" fill="url(#block_color)" id="block"></rect>
+            <rect height="0px" width="0px" x="-1000px" y="510px" fill="url(#obstacle_color)" id="obstacle"></rect>
+            <path d='M250 500' stroke='transparent' stroke-width='2px' fill='transparent' id='trajectory'></path>
+            <circle cx="250px" cy="500px" r="10px" fill="url(#ball_color)" id="ball"></circle>
+            <path d='M250 500' stroke='green' stroke-width='2px' id='VelArrow'></path>
+            <path d='M150 250' stroke='purple' stroke-width='2px' id='ForArrow'></path>
+            <circle cx="250px" cy="500px" r="3px" fill='green' id='VelArrowHead'></circle>
+            <circle cx="150px" cy="250px" r="3px" fill='purple' id='ForArrowHead'></circle>
+            <text x=120 y=270 fill='purple'>Force Field</text>
+        </svg>
+    </div>
+</body>
+
+</html>
